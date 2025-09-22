@@ -1,0 +1,5 @@
+# IDE files
+.venv
+.idea
+# macOS system file
+.DS_store
