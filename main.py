@@ -19,7 +19,15 @@ from typing import List
 # List of words we can pick randomly
 word_list: List[str] = ["Leather", "Fish", "Cat", "Math"]
 
-random_word: str = word_list[random.randint(0, len(word_list) - 1)]
-guess_word = [character for character in random_word]
-game_word = [char for char in guess_word if char not in guess_word[1 : len(random_word) - 1]]
-print(game_word)
+def game_field(word_to_guess: str):
+    field_list = list()
+    for character in word_to_guess:
+        if character not in word_to_guess[1: len(word_to_guess) - 1]:
+            field_list.append(character)
+        else:
+            field_list.append("_")
+    print(field_list)
+
+generated_word: str = word_list[random.randint(0, len(word_list) - 1)]
+
+game_field(generated_word)
