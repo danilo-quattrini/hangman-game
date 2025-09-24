@@ -20,4 +20,6 @@ from typing import List
 word_list: List[str] = ["Leather", "Fish", "Cat", "Math"]
 
 random_word: str = word_list[random.randint(0, len(word_list) - 1)]
-print(random_word)
+guess_word = [character for character in random_word]
+game_word = [char for char in guess_word if char not in guess_word[1 : len(random_word) - 1]]
+print(game_word)
