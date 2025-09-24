@@ -25,6 +25,13 @@ def word_formatter(word_to_guess: str):
             field_list.append("_")
     print(field_list)
 
+
+    while life != 0:
+        print("==>", end="\r")
+        letter_guessed = str(input())
+        while len(letter_guessed) > 1:
+            print("Just one word not a string!!")
+            break
 def main():
     # List of words we can pick randomly
     word_list: List[str] = ["Leather", "Fish", "Cat", "Math"]
