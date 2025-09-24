@@ -5,10 +5,9 @@ Let's start by thinking what components we can use for our game?
  - Variables? <- We can use it either
 
 I think the game work like this:
-    1. First we write/define the word the user should guess (Maybe we can implement a list of words?).
-    2. Then we save the first and the last letter into a List
-        (We define the list before with the size of the word).
-    3. While in the middle of the list, we leave an empty space.
+    1. First we write/define the word the user should guess ✓ (Maybe we can implement a list of words?).
+    2. Then we save the first and the last letter into a List ✓
+    3. While in the middle of the list, we leave an empty space.✓
     4. Then the script will ask the user to write a word (cheks if it's a word and not a phrase)
     5. If the user guess the word, then we will add the word into the list (list.append())
     6. Whereas, if the word is the wrong one we will display a piece of the hang man, that shown its mistake.
@@ -23,7 +22,10 @@ def word_formatter(word_to_guess: str):
             field_list.append(character)
         else:
             field_list.append("_")
-    print(field_list)
+    return field_list
+
+def game_logic(field, word_to_guess):
+    life = 7
 
 
     while life != 0:
@@ -37,7 +39,6 @@ def main():
     word_list: List[str] = ["Leather", "Fish", "Cat", "Math"]
 
     generated_word: str = word_list[random.randint(0, len(word_list) - 1)]
-    word_formatter(generated_word)
-
+    game_logic(word_formatter(generated_word), generated_word)
 if __name__ == "__main__":
     main()
