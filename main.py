@@ -16,10 +16,7 @@ I think the game work like this:
 # Use the random library to pick a random value from a list
 import random
 from typing import List
-# List of words we can pick randomly
-word_list: List[str] = ["Leather", "Fish", "Cat", "Math"]
-
-def game_field(word_to_guess: str):
+def word_formatter(word_to_guess: str):
     field_list = list()
     for character in word_to_guess:
         if character not in word_to_guess[1: len(word_to_guess) - 1]:
@@ -28,6 +25,12 @@ def game_field(word_to_guess: str):
             field_list.append("_")
     print(field_list)
 
-generated_word: str = word_list[random.randint(0, len(word_list) - 1)]
+def main():
+    # List of words we can pick randomly
+    word_list: List[str] = ["Leather", "Fish", "Cat", "Math"]
 
-game_field(generated_word)
+    generated_word: str = word_list[random.randint(0, len(word_list) - 1)]
+    word_formatter(generated_word)
+
+if __name__ == "__main__":
+    main()
